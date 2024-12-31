@@ -13,8 +13,8 @@ app.use(subCategoriesRouter);
 app.use(pdfRouter);
 
 
-// const DB = "mongodb+srv://akashyap815353:4YdYtXKtzatPURzg@cluster.efxvy.mongodb.net/examAppDataBase";
-const DB = "mongodb+srv://akashyap815353:4YdYtXKtzatPURzg@cluster.efxvy.mongodb.net/examAppDataBase?retryWrites=true&w=majority&appName=Cluster";
+const DB = "mongodb+srv://akashyap815353:4YdYtXKtzatPURzg@cluster.efxvy.mongodb.net/examAppDataBase";
+// const DB = "mongodb+srv://akashyap815353:4YdYtXKtzatPURzg@cluster.efxvy.mongodb.net/examAppDataBase?retryWrites=true&w=majority&appName=Cluster";
 
 app.get("/", function(req, res){
   const response = { statuscode: res.statusCode, message: "API Works!!!"};

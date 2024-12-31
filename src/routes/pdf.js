@@ -5,7 +5,7 @@ const pdfRouter = express.Router();
 //Add Books In Library
 pdfRouter.post("/api/addPdf", async function(req, res) {
     try {
-        const {  pdfUrl } = req.body;
+        const {  pdfUrl, pdfName, category,subCategory,minorCategory } = req.body;
 
         // Check if a book with the same bookNo already exists
         const existingBook = await PdfModel.findOne({ pdfUrl: pdfUrl });
@@ -18,6 +18,10 @@ pdfRouter.post("/api/addPdf", async function(req, res) {
         let pdfModel = new PdfModel({
             _id: pdfId,
             pdfUrl,
+            pdfName,
+            category,
+            subCategory,
+            minorCategory
         });
 
         pdfModel = await pdfModel.save();

@@ -5,10 +5,10 @@ const subCategoriesRouter = express.Router();
 //Add Books In Library
 subCategoriesRouter.post("/api/addSubCategory", async function(req, res) {
     try {
-        const {  subCategoryName } = req.body;
+        const {  categoryName } = req.body;
 
         // Check if a book with the same bookNo already exists
-        const existingBook = await SubCategoriesModel.findOne({ subCategoryName: subCategoryName });
+        const existingBook = await SubCategoriesModel.findOne({ categoryName: categoryName });
         if (existingBook) {
             return res.status(400).json({ "status": false, msg: "Category with the same Category already exists." });
         }

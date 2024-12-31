@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const subCategoriesSchema = mongoose.Schema({
+const minorCategoriesSchema = mongoose.Schema({
     _id: {
         type: String, 
         required: true
@@ -12,5 +12,5 @@ const subCategoriesSchema = mongoose.Schema({
     },
 });
 
-const SubCategoriesModel = mongoose.model("SubCategories", subCategoriesSchema);
-module.exports = SubCategoriesModel;
+const MinorCategoriesModel = mongoose.model("MinorCategories", minorCategoriesSchema);
+module.exports = MinorCategoriesModel;
