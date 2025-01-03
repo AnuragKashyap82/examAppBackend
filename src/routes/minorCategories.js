@@ -1,9 +1,9 @@
 const express = require('express');
 const MinorCategoriesModel = require('../models/minorCategoriesModel');
-const categoriesRouter = express.Router();
+const minorCategoryRouter = express.Router();
 
 //Add Books In Library
-categoriesRouter.post("/api/addMinorCategory", async function(req, res) {
+minorCategoryRouter.post("/api/addMinorCategory", async function(req, res) {
     try {
         const {  categoryName } = req.body;
 
@@ -27,7 +27,7 @@ categoriesRouter.post("/api/addMinorCategory", async function(req, res) {
     }
 });
 
- categoriesRouter.get('/api/getAllMinorCategory', async (req, res)=> {
+minorCategoryRouter.get('/api/getAllMinorCategory', async (req, res)=> {
     try {
         const categories = await MinorCategoriesModel.find();
         res.json({"status": true, categories});
@@ -37,4 +37,4 @@ categoriesRouter.post("/api/addMinorCategory", async function(req, res) {
 });
  
 
- module.exports = categoriesRouter;
+ module.exports = minorCategoryRouter;
