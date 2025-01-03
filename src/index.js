@@ -3,6 +3,7 @@ const mongoose  = require("mongoose");
 const categoriesRouter = require("./routes/categories");
 const subCategoriesRouter = require("./routes/subCategory");
 const pdfRouter = require("./routes/pdf");
+const minorCategoryRouter = require("./routes/minorCategories");
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -10,6 +11,7 @@ const app = express();
 app.use(express.json());
 app.use(categoriesRouter);
 app.use(subCategoriesRouter);
+app.use(minorCategoryRouter);
 app.use(pdfRouter);
 
 

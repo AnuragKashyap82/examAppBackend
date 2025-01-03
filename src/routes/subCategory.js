@@ -17,7 +17,7 @@ subCategoriesRouter.post("/api/addSubCategory", async function(req, res) {
 
         let subCategoriesModel = new SubCategoriesModel({
             _id: category,
-            subCategoryName,
+            categoryName,
         });
 
         subCategoriesModel = await subCategoriesModel.save();
